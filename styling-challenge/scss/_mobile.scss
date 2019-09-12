@@ -1,0 +1,76 @@
+// FOR ANY BROWSER  WITH LASS THAN 900PX
+@media(max-width:900px){
+// MAIN CONTAINER
+    .main{
+        width: 90%;
+        padding:0;
+    }
+
+  // TOP VOTED BOOK LIST
+    .books-list {
+        grid-template-columns: 1fr;
+        .book {
+            -webkit-box-orient:horizontal; 
+            -webkit-box-direction:normal;     
+            -ms-flex-direction:row;     
+            flex-direction:row;
+        } 
+    
+        .book-info{
+            padding: 1rem;
+            margin: 1rem;
+        }
+    }  
+  
+}
+
+
+// FOR ANY BROWSER WITH LASS THAN 700PX
+@media(max-width:700px){
+    // NAV
+    .top-actions{
+        padding:0;
+        width:100%;
+
+        a{
+            padding: 0;
+            margin:0 0.25rem;
+        }
+    }
+
+    //  RECOMMENDED BOOK
+    .main{
+        width: 100%;
+
+     .featured-book {
+        -webkit-box-orient:vertical; 
+        -webkit-box-direction:normal; 
+        -ms-flex-direction:column; 
+        flex-direction:column;
+
+            img{
+                padding:0;
+            }
+
+            .book-info{
+               margin:0.5rem;
+
+               .synopsis > p:last-child{
+                margin: 1rem 0;
+                }
+            }         
+        }
+    }
+
+    // TOP VOTED BOOK LIST
+    .books-list {
+        grid-template-columns: 1fr;
+        
+        .book {
+            -webkit-box-orient:vertical;  
+            -webkit-box-direction:normal;  
+            -ms-flex-direction:column;  
+            flex-direction:column;
+        }
+    }   
+}

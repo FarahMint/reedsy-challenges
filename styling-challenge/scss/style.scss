@@ -1,0 +1,233 @@
+@import "config";
+@import "utilities";
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:1rem;
+    line-height:1.6;
+    background: $light-color;
+    max-width:1200px;
+    width:100%;
+    height:100%;
+}
+
+a{
+    text-decoration: none;
+    cursor:pointer;
+}
+
+a{
+    padding: 1rem;
+    margin:0 0.25rem;
+
+    &:hover{
+    color:$light-color;
+    background-color: $primary-color;
+    border-radius:$border-radius
+    }
+}
+
+
+ul{
+    list-style: none;
+}
+
+// img take full width of their continer without breaking out
+img{
+    
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+h1{
+    padding:1rem;
+}
+
+// Header Navbar
+
+.top-actions{
+    padding:0.7 2rem;
+    margin:  auto;
+    width:80%;
+    padding: 1rem;
+
+    .container{
+        display:flex;
+        justify-content: space-between; 
+        align-items: center;
+
+        .top-logo{
+            background: grey;
+            padding:.5rem;
+            display:block;
+            width: 100px;
+            height:2rem;
+            text-align:center;
+            line-height:1;
+            border-radius: 5px;
+        }
+
+        .top-menu ul{ 
+            display:flex;
+            justify-content: space-around; 
+        }
+    }
+}
+
+// MAIN CONATINER FEATURED BOOK
+
+.main{
+    width:80%;
+    min-height: calc(100vh - 70px);
+    -webkit-box-shadow: -2px 0px 3px 5px rgba(0,0,0,0.25);
+    box-shadow: -2px 0px 3px 5px rgba(0,0,0,0.25);
+    margin:0 auto;
+      
+    
+    .container{
+      background-color: #fff;
+    }
+
+        .featured-book {
+            position: relative;
+            background-color: #fdf9f6;
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                    justify-content: center;
+            width:100%;
+        
+
+            .recommended{
+                position:absolute;
+                top:0;
+                right:0;
+                background-color: $primary-color;
+                color:#fff;
+                padding:.5rem;
+                border-bottom-left-radius: 15px;
+            }
+
+            img{
+                -webkit-box-flex: 1 ;
+                -ms-flex: 1 ;
+                flex: 1 ;
+                padding:1rem;
+                border-radius:$border-radius;
+            }
+
+            .book-info{
+                -webkit-box-flex: 2;
+                -ms-flex: 2;
+                flex: 2;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                        flex-direction: column;
+                padding:1rem;
+            }
+            .synopsis > p:last-child{
+                margin: 1rem 0;
+            }
+        }
+    }
+
+// TOP-VOTED
+.container .top-voted{
+  padding:1rem;
+
+    h2{
+        padding: 1rem;
+    }
+}
+
+.books-list{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:1rem;
+ 
+    .book{
+        position:relative;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        background-color: $light-color;
+        padding: .75rem;
+        border-radius:15px;
+     
+        img{
+            width:150px;
+            margin:0 auto;
+            padding:1rem;
+            }
+
+        span.position{ 
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack:center;
+            -ms-flex-pack:center;
+            justify-content:center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width:25px;
+            height:25px;
+            border-radius:50%;
+            border: 2px solid #f1bf00;
+            color:#f1bf00;
+            padding:1rem;
+            font-weight:900;
+        }
+
+        .book-info{
+            padding:1rem;
+    
+                .title{
+                    font-size: 1rem;
+                }
+            }
+
+    }   
+}
+
+    
+
+
+
+
+
+
+footer{
+    height: 50px;
+    width: 100vw;
+    
+    .container ul{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding:1rem;
+    }
+
+}
+
+@import "mobile";
