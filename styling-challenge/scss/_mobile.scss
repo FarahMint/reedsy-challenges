@@ -1,4 +1,4 @@
-// FOR ANY BROWSER  WITH LASS THAN 900PX
+// FOR ANY BROWSER  WITH LESS THAN 900PX
 @media(max-width:900px){
 // MAIN CONTAINER
     .main{
@@ -22,7 +22,7 @@
 }
 
 
-// FOR ANY BROWSER WITH LASS THAN 700PX
+// FOR ANY BROWSER WITH LESS THAN 700PX
 @media(max-width:700px){
     // NAV
     .top-actions{
@@ -50,15 +50,18 @@
     //  RECOMMENDED BOOK
     .main{
         width: 100%;
+        box-shadow: none;
 
      .featured-book {
         flex-direction:column;
 
             img{
+                flex-basis: auto;
                 padding:0;
             }
 
             .book-info{
+                flex-basis: auto;
                margin:0.5rem;
 
                .synopsis > p:last-child{
