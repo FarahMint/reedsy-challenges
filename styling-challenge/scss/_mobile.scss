@@ -9,10 +9,7 @@
   // TOP VOTED BOOK LIST
     .books-list {
         grid-template-columns: 1fr;
-        .book {
-            -webkit-box-orient:horizontal; 
-            -webkit-box-direction:normal;     
-            -ms-flex-direction:row;     
+        .book {   
             flex-direction:row;
         } 
     
@@ -38,7 +35,6 @@
                 width: 100%;
                 ul{
                     margin:1rem 0;
-                    flex:1;
                 }
            
                 a{
@@ -56,9 +52,6 @@
         width: 100%;
 
      .featured-book {
-        -webkit-box-orient:vertical; 
-        -webkit-box-direction:normal; 
-        -ms-flex-direction:column; 
         flex-direction:column;
 
             img{
@@ -79,11 +72,14 @@
     .books-list {
         grid-template-columns: 1fr;
         
-        .book {
-            -webkit-box-orient:vertical;  
-            -webkit-box-direction:normal;  
-            -ms-flex-direction:column;  
+        .book { 
             flex-direction:column;
+            padding:0;
+
+            .book-info{
+                padding:0;
+                margin:0;
+            }
         }
     }   
 }    
