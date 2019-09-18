@@ -6,7 +6,7 @@ $white-color:#fefefe;
 $border-radius:25px;
 // container max-width
 $max-width:1100px;
-
+  
 // Set text color based on the background
 @function set-text-color($color){
     @if(lightness($color) > 60){
