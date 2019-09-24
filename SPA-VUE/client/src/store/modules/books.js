@@ -1,7 +1,11 @@
+import { getAllBooks } from '@/api'
+
 import router from '@/router'
 //https://stackoverflow.com/questions/42178851/getting-router-params-into-vuex-actions
+ 
 
- const URL="http://localhost:3000/books";
+
+//  const URL="http://localhost:3000/books";
  /**
   * LS use: save data to LS when page refresh in boo/:id
   */
@@ -14,7 +18,7 @@ book: book? JSON.parse(book): {},
 bookslength:null,
 query: null,
 searchedBooks: null,
-isLoading: false,
+isLoading:false,
 error:""
 };
  //// We need these to be able to access
@@ -24,25 +28,25 @@ const getters={
  singleBook:(state)=>state.book,
  getquery: (state) => state.query,
  getSearchedBooks: (state) => state.searchedBooks,
+ isLoading: state =>  state.isLoading ? false : state.books.length > 0 ,
 
  bookslength:(state)=>  state.books ? state.books.length : null,
  error:(state)=> state.error
 };
 
 const actions={
-    async fetchAllBooks({commit}){
-      commit("IS_LOADING", true)
-        try{
-            const data = await fetch(URL);
-            const  {books}= await data.json();
 
-            commit("IS_LOADING", false);
+    async fetchAllBooks({commit}){
+        try{
+            // const data = await getAllBooks();
+            // const  {books}= await data.json();
+
+            const books = await getAllBooks();
            commit("FETCH_ALL_BOOKS", books); 
         }catch(err){
-          commit("IS_LOADING", false);
           commit("ERROR", err);
         }
-    },
+    }, 
    fetchSingleBook({ commit }) {
         commit('FETCH_SINGLE_BOOK');
     
@@ -71,9 +75,7 @@ const mutations={
       state.searchedBooks = state.books.filter((book) => book.title.toLowerCase().includes(word) || book.synopsis.toLowerCase().includes(word));
     }
   },
-  IS_LOADING: (state, action) => {
-    state.isLoading = action
-  },
+ 
   ERROR: (state, message) => {
     state.error = message
   },

@@ -34,7 +34,7 @@
 
 <script>
 
-import {mapGetters, mapActions } from "vuex";
+import { mapActions } from "vuex";
 export default {
   name: 'Book', 
       /** props from parent BooksList  */
@@ -48,11 +48,7 @@ export default {
             required:true,
         },
         
-    },
-    computed: {
-      ...mapGetters(["formatSynopsys"]),
-    
-    },  
+    },   
       methods:{
          ...mapActions([ "fetchSingleBook" ]),
     // Shorten a string to less than maxLen characters without truncating words.

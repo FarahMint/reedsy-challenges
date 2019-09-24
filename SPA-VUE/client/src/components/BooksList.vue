@@ -1,37 +1,41 @@
 <template>
-<div>
+<div class="container">
 <p class="error" v-if="error">{{error}}</p>
+<Loader  v-if="!isLoading" :text="'Loading books'"/>
 
-<div v-if="!displayBooks.length">Sorry no results found!</div>
+<!-- <div v-if="!displayBooks.length">Sorry no results found!</div> -->
 
-    <ol> <BookItem 
-              v-for="(item , index) in  displayBooks"
+      <ol> <BookItem 
+            v-for="(item , index) in  displayBooks"
             :book="item"
             :index="index"
             :key="item.slug"
             :bookslength="bookslength"
               /> </ol>
-
-  </div>
+      </div>
 </template>
 
 <script>
 
 import { mapGetters, mapActions } from "vuex";
+import Loader from "./Loader";
 import BookItem from "./BookItem";
  
 
 
 export default {
   name: 'BooksList',
-    components:{ BookItem }, 
+    components:{ 
+      BookItem,
+      Loader
+      }, 
     methods:{
      ...mapActions(["fetchAllBooks"])
    
     },
 
     computed: {
-    ...mapGetters(["allBooks" , "bookslength", "error", "getSearchedBooks"
+    ...mapGetters( ["allBooks" , "bookslength", "error", "getSearchedBooks", "isLoading"
     ]),
        displayBooks () {
       return this.getSearchedBooks || this.allBooks;
