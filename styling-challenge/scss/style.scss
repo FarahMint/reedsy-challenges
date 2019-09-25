@@ -23,18 +23,6 @@ a{
     cursor:pointer;
 }
 
-a{
-    padding: 1rem;
-    margin:0 0.25rem;
-
-    &:hover{
-    color:$light-color;
-    background-color: $primary-color;
-    border-radius:$border-radius
-    }
-}
-
-
 ul{
     list-style: none;
 }
@@ -78,6 +66,18 @@ h1{
         .top-menu ul{ 
             display:flex;
             justify-content: space-around; 
+            li{
+                padding: 0.5rem;
+                 margin: 0 0.25rem;
+            }
+            
+                .active,
+                & li:hover{
+                color:$light-color;
+                background-color: $primary-color;
+                border-radius:5px;
+                }
+            
         }
     }
 }

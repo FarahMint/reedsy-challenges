@@ -37,10 +37,10 @@
                     margin:1rem 0;
                 }
            
-                a{
-                    padding: 0.5rem 0.15rem;
+               li{
+                    // padding: 0.5rem 0.15rem;
                     // margin:0 0.5rem;
-                    font-size: .85rem;
+                    font-size: .65rem;
                 }
             }
      }
@@ -55,8 +55,15 @@
      .featured-book {
         flex-direction:column;
 
+        .recommended {
+            right: 25%;
+            font-size: .75rem;
+        }
+
             img{
                 flex-basis: auto;
+                width:50%;
+                align-self: center;
                 padding:0;
             }
 
