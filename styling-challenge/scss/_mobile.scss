@@ -65,6 +65,10 @@ $layout-breakpoint-small: 750px;
                     width:50%;
                     align-self: center;
                     padding:0;
+                  
+                }
+                .book-info{
+                    flex-basis:auto;
                 }
     
                 .recommended {
