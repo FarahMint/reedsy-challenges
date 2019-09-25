@@ -34,45 +34,45 @@ The main task the user can perform are:
 
 ## 2. General
 
-2.1. What kind of front end projects do you enjoy working on? Why?
+**2.1. What kind of front end projects do you enjoy working on? Why?**
 
 I am passionate about human-computer interaction, its constant development and how it shapes our lives. I love to design and build stunning interactive experiences. As someone who's highly curious, diligent, and creative, I'm driven by the challenge to constantly learn new things and execute with equal care to both form and function. One of my focus and ambition is to promote technology for helping people to achieve their full potential in life.
 
   
 
-2.2. Which are your favorite features of HTML5? How have you used them before?
+**2.2. Which are your favorite features of HTML5? How have you used them before?**
 
 I like to use the HTML5's web storage feature to simulate and mimic the backend. The local storage makes it possible to store values in the browser. I used the localStorage in three of my projects where the user can select an item and then it get saved it in their favorite.
 
   
 
-2.3. Explain the difference between creating a DOM element setting innerHTML and using createElement.
+**2.3. Explain the difference between creating a DOM element setting innerHTML and using createElement.**
 
-The createElement method add new elements to the DOM and take three steps at least in order to display the created element:
+The `createElement` method add new elements to the DOM and take three steps at least in order to display the created element:
 
 **![](https://lh5.googleusercontent.com/FnWTszCtfMrqTxYsgLKYS3et2ypl6yD_2YlGwqNuD8KUfokxrT8_lCpxwNtiOu27JgFNoLB2gdzVEREg_rw6zA6HmxAWScYS718E9CcFNA27rPctuwOOphEI6iAkuJjuPGfkdOUA)**
   
 
-Whereas  the innerHTML property can create an element in a single line.
+Whereas  the `innerHTML` property can create an element in a single line.
  ![](https://lh5.googleusercontent.com/UhObM7qnFqKjB450YSS5ZR-cZiFfJl1BTQAYnJzug6N5v84AMT5YdICTobJ7cKlwVn9lkDqFKIcd2Dhc4B8N_x22JefH8P1TVCLPYc7Zh6q99vFf_k0VgCmofqRf5QCqWeNAlWjI)**
   
 
-The innerHTML property can also change the value of selected DOM node  and can be useful when we want to change all the children of a given element:
+The `innerHTML` property can also change the value of selected DOM node  and can be useful when we want to change all the children of a given element:
 
 **![](https://lh4.googleusercontent.com/y55tA-B-4iyO7uk-jkPVHA4SHCkY5xm4Q_sMk-f045hJwMwjgT3ZXNnPcPXkDqhX5wQWvJ4tnkvRBl7ICLhHDt24fgE4TI9dx1xr9MQcbHYORr5oYHM6hS_6_k-6vod4imsEfJ3G)**
   
   
 
-It is indeed most faster and easier to read when using the innerHTML property, although this has some pitfalls:
+It is indeed most faster and easier to read when using the `innerHTML` property, although this has some pitfalls:
 
-1) The innerHTML property destroys the contents of a container and replace it with something new as the example above demonstrates. The content is replaced everywhere, so when we append to or modify the innerHTML, all the DOM inside that element are re-parsed and recreated. In order to keep the previous content we need to remember to use += operators.
+1) The `innerHTML` property destroys the contents of a container and replace it with something new as the example above demonstrates. The content is replaced everywhere, so when we append to or modify the `innerHTML`, all the DOM inside that element are re-parsed and recreated. In order to keep the previous content we need to remember to use += operators.
  However, It is recommended to use [insertAdjacentHTML()](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method when we want to insert the HTML into the document rather than replace the contents of an element because it prevents bug and allows to keep track of modifications.
 
   
 
-2) This property is also prone to [cross-site scripting](https://en.wikipedia.org/wiki/cross-site%20scripting) attack (XSS), so it is recommended to not use it whenever we manipulate sensitive data and we have no control over it such as user information. In this instance it is better to use textContent because it does not parse the passed content as HTML, but instead inserts it as raw text.
+2) This property is also prone to [cross-site scripting](https://en.wikipedia.org/wiki/cross-site%20scripting) attack (XSS), so it is recommended to not use it whenever we manipulate sensitive data and we have no control over it such as user information. In this instance it is better to use `textContent` because it does not parse the passed content as HTML, but instead inserts it as raw text.
 
-To conclude, I will say that createElement is better to use as it has less risks of bugs and we can manipulate the DOM in a consistent way as it gives more flexibility in terms of what you can add to or do with an element initially without having to reselect the element.
+To conclude, I will say that `createElement` methods  is a better approach when we want to create a brand new element in the DOM because it has less risks of bugs and we can then manipulate the DOM in a consistent way as it gives more flexibility in terms of what you can add to or do with an element initially without having to reselect the element.
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
 
@@ -82,17 +82,16 @@ To conclude, I will say that createElement is better to use as it has less risks
 
   
 
-2.4. Compare two-way data binding vs one-way data flow.
+**2.4. Compare two-way data binding vs one-way data flow.**
 
 When we talk about data binding we are talking about  how data flow.
 
-The one-way data flow binds the data from model (where data of application resides ) to view - (where we have our visuals and in most cases the HTML of our application). It has a top down approach.The information flows in only one single direction.So whatever happens on the UI triggers a message that signal to the model to update a part of the data. Only the model can access and change the application state it is referred as the single source of truth.
+The one-way data flow binds the data from model (where data of application resides ) to view - (where we have our visuals and in most cases the HTML of our application). It has a top down approach. The information flows in only one single direction. So whatever happens on the UI triggers a message that signal to the model to update a part of the data. Only the model can access and change the application state, it is the single source of truth.
 
 In javaScript, the React framework follows this unidirectional data flow. The HTML can only raise events that the component responds to. The typical example is by using onChange.
 
-The <input/>  does not have direct access to the components state, its value is controlled by the APP function component. The only way to update the value is from the component itself, which is done by binding an onChange event to the <input /> which sets e.target.value to with the React component method setData()  .
+The `<input/>`  does not have direct access to the components state, its value is controlled by the APP function component. The only way to update the value is from the component itself, which is done by binding an onChange event to the `<input />` which sets e.target.value with the React component method setData()  .
 
-<input  onChange={(e)=>  setData(e.target.value)}/>
 
 ![](https://lh6.googleusercontent.com/071nKaQxezSUDHGbLQwsbByJXaja-_tnBRBM0zsrpPqmBc4y53XBbEoV5PODpBzYKWfLAH2ylcdoOcZSMYCD9_InL30cQ7wopXOFBG6R-j5fot__noCxkVmwM7M8j8gRJfYx_QUU)
 
@@ -106,6 +105,6 @@ Two-way data binding bind the data from model to view and view model, the inform
 ![](https://lh3.googleusercontent.com/7AKWonWlpvjBdQCMHfL56oSUMKOtVCLWLW_teAnGthUf-fpk-pYr0bfA2eT_EqeCB5Z-2fQ4LwGzU1r5XfyQV1T1cSViKbDBVI-7uAqnYpO8ZtK7RD2QbkmXr099HiirDNUmY-wf)
 
   
-The attribute v-model  is a Vue directive. A directive’s task is to reactively apply special behaviour to the DOM when the value of its expression changes. In the case of v-model, it binds the element to one of the data properties that Vue is watching - in our example the data property is msg .
+The attribute `v-model`  is a Vue directive., it's task is to reactively apply special behaviour to the DOM when the value of its expression changes. In the case of `v-model`, it binds the element to one of the data properties that Vue is watching - in our example the data property is `msg` .
 
 Angular and Vue.js are popular framework which uses two-way.
