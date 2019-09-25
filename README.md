@@ -108,3 +108,12 @@ Two-way data binding bind the data from model to view and view model, the inform
 The attribute `v-model`  is a Vue directive., it's task is to reactively apply special behaviour to the DOM when the value of its expression changes. In the case of `v-model`, it binds the element to one of the data properties that Vue is watching - in our example the data property is `msg` .
 
 Angular and Vue.js are popular framework which uses two-way.
+
+**2.5. Why is asynchronous programming important in JavaScript?**
+ 
+ In JavaScript, we often need to deal with asynchronous behavior to ensure responsiveness of the application. However to understand asynchronous programming first we need to understand how synchronous programming works.
+
+JavaScript code runs on a single-thread and has a synchronous execution model. Single thread means that one command is being executed at a time and synchronous programming means that the code is executed sequentially from top-to-bottom, in the exact same order and it waits for one action to complete before moving on to the next. Therefore, if one function takes time like fetching data from an API, then all the code is blocked and nothing get displayed on the page. Among other things, this kind of blocking leads to really bad user experience.
+
+  
+Asynchronous programming allows programs to do more than one thing at a time and therefore can be used to mitigate this issue. Asynchronous code can start something now and then finish it later. Let’s say I am also using an API to fetch data but then instead of blocking the code and waiting for the response. Asynchronous programming allows the code to carry on, and perform other task, like displaying a loader indicating to the user that something is in progress until that API respond and then do something with the data to display on the page.
