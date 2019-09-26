@@ -1,10 +1,10 @@
-# Reedsy-challenge
 
 ## About me
 
 As a self-taught developer, I have started to explore Vue.js framework and as a result I have developed a music recommendation web application. In this project I used Vuex for the state management to ensure that the state is in a centralized store for all the components in the application. This allowed me to avoid props drilling and used some of the data for sibling view components.
 
-[https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/store.js](https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/store.js)
+[https://github.com/FarahMint/SpotiClonevuex/blob/master/src/store.js](https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/store.js)
+
 I also implemented a dynamic routing with Vue-router library which enable the user to be directed to a new page when:
 
 -  an album is selected : display page with more information about the selected album.
@@ -16,7 +16,7 @@ I also implemented a dynamic routing with Vue-router library which enable the us
 -  Not found page is displayed when the path is not correct.
     
 
-[https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/router.js](https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/router.js)
+[https://github.com/FarahMint/SpotiClonevuex/blob/master/src/router.js](https://github.com/FarahMint/SpotiClone-vuex/blob/master/src/router.js)
 
 The data are fetched from iTunes API with search and filtering functionalities and allows users to select and save albums they like leveraging the local storage API to mimic the backend.
 
@@ -32,21 +32,21 @@ The main task the user can perform are:
 
   
 
-## 2. General
+# 2. General
 
-**2.1. What kind of front end projects do you enjoy working on? Why?**
+## 2.1. What kind of front end projects do you enjoy working on? Why?
 
 I am passionate about human-computer interaction, its constant development and how it shapes our lives. I love to design and build stunning interactive experiences. As someone who's highly curious, diligent, and creative, I'm driven by the challenge to constantly learn new things and execute with equal care to both form and function. One of my focus and ambition is to promote technology for helping people to achieve their full potential in life.
 
   
 
-**2.2. Which are your favorite features of HTML5? How have you used them before?**
+## 2.2. Which are your favorite features of HTML5? How have you used them before? 
 
 I like to use the HTML5's web storage feature to simulate and mimic the backend. The local storage makes it possible to store values in the browser. I used the localStorage in three of my projects where the user can select an item and then it get saved it in their favorite.
 
   
 
-**2.3. Explain the difference between creating a DOM element setting innerHTML and using createElement.**
+## 2.3. Explain the difference between creating a DOM element setting innerHTML and using createElement.
 
 The `createElement` method add new elements to the DOM and take three steps at least in order to display the created element:
 
@@ -74,15 +74,11 @@ It is indeed most faster and easier to read when using the `innerHTML` property,
 
 To conclude, I will say that `createElement` methods  is a better approach when we want to create a brand new element in the DOM because it has less risks of bugs and we can then manipulate the DOM in a consistent way as it gives more flexibility in terms of what you can add to or do with an element initially without having to reselect the element.
 
-[https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
 
-[https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-
-[https://stackoverflow.com/questions/11515383/why-is-element-innerhtml-bad-code](https://stackoverflow.com/questions/11515383/why-is-element-innerhtml-bad-code)
 
   
 
-**2.4. Compare two-way data binding vs one-way data flow.**
+## 2.4. Compare two-way data binding vs one-way data flow.
 
 When we talk about data binding we are talking about  how data flow.
 
@@ -109,7 +105,7 @@ The attribute `v-model`  is a Vue directive., it's task is to reactively apply s
 
 Angular and Vue.js are popular framework which uses two-way.
 
-**2.5. Why is asynchronous programming important in JavaScript?**
+## 2.5. Why is asynchronous programming important in JavaScript?
  
  In JavaScript, we often need to deal with asynchronous behavior to ensure responsiveness of the application. However to understand asynchronous programming first we need to understand how synchronous programming works.
 
@@ -117,3 +113,9 @@ JavaScript code runs on a single-thread and has a synchronous execution model. S
 
   
 Asynchronous programming allows programs to do more than one thing at a time and therefore can be used to mitigate this issue. Asynchronous code can start something now and then finish it later. Let’s say I am also using an API to fetch data but then instead of blocking the code and waiting for the response. Asynchronous programming allows the code to carry on, and perform other task, like displaying a loader indicating to the user that something is in progress until that API respond and then do something with the data to display on the page.
+
+   ## References:
+    innerHTML vs createElement()
+   [https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+    [https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+    [https://stackoverflow.com/questions/11515383/why-is-element-innerhtml-bad-code](https://stackoverflo*w.com/questions/11515383/why-is-element-innerhtml-bad-code)
