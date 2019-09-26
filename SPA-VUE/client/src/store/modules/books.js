@@ -67,13 +67,23 @@ const mutations={
     // router.push({name: "BookDetails",  slug:router.currentRoute.params.slug})
   },
   SEARCH_BOOK (state, word) {
-    if (!(word) || word === {}) {
+    // remove any  prev err message before starting new search
+    this.commit("ERROR", "")
+      if (!(word) || word === {}) {
         state.query = null
         state.searchedBooks = null
     } else {
       state.query = word;  
       state.searchedBooks = state.books.filter((book) => book.title.toLowerCase().includes(word) || book.synopsis.toLowerCase().includes(word));
-    }
+
+      // err message if no result found
+      state.searchedBooks.length === 0 ?
+      this.commit("ERROR", "Sorry no results found!")
+      : 
+      this.commit("ERROR", "");
+    } 
+  
+ 
   },
  
   ERROR: (state, message) => {

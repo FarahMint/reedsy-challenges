@@ -3,7 +3,6 @@
 <p class="error" v-if="error">{{error}}</p>
 <Loader  v-if="!isLoading" :text="'Loading books'"/>
 
-<!-- <div v-if="!displayBooks.length">Sorry no results found!</div> -->
 
       <ol> <BookItem 
             v-for="(item , index) in  displayBooks"
@@ -12,6 +11,8 @@
             :key="item.slug"
             :bookslength="bookslength"
               /> </ol>
+
+<!-- <div v-if="!displayBooks.length">Sorry no results found!</div> -->
       </div>
 </template>
 
@@ -29,6 +30,7 @@ export default {
       BookItem,
       Loader
       }, 
+   
     methods:{
      ...mapActions(["fetchAllBooks"])
    
@@ -50,19 +52,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
-// .container{
-//     width: 100%;
-//     height:100%;
-//     padding-top: 1rem;
-
-//     h1{
-//       margin:0;
-//       margin-bottom:2rem;
-//       text-align: center;
-//       color:$mainYellow;
-//       font-weight: 900;
-//     }
 
 /** to style and change the color of num */
     ol {

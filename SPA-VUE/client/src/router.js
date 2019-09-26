@@ -1,10 +1,12 @@
+/**https://www.amuponda.com/2019/01/28/handling-404-errors-with-vue-router/ */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import BookDetails from './views/BookDetails.vue'
 import NotFound from "./views/NotFound.vue";
 //  import store from "./store"
-  import {isValid}from "./store/modules/helper"
+import {isValid}from "./store/modules/helper"
 
 Vue.use(Router)
 
@@ -29,7 +31,7 @@ export default new Router({
       beforeEnter: (to, from, next) => {
 
       if (!isValid(to.params.slug) ) {
-        next({ name: 'NotFound' });
+        next({ name: 'NotFound',  params: { '0': to.path }  });
       }
        next();
        }
@@ -38,9 +40,10 @@ export default new Router({
       path: '/', 
       redirect: { name: 'home' }
     },
-    {path:"/Notfound",
+    {path:"/*",
     name: 'NotFound',
      component:NotFound},
+  
   ]
 })
 

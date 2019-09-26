@@ -1,9 +1,10 @@
 <template>
-
+<div>
     <input 
     type="search"
     v-model="searchWord"
     placeholder="search...">
+</div>
 
 </template>
 

@@ -22,8 +22,6 @@ describe('BookItem', () => {
         fetchSingleBook:jest.fn()
     }
 
-   
-    
     store = new Vuex.Store({
       modules: {
         books: {
@@ -36,19 +34,11 @@ describe('BookItem', () => {
       store,
       propsData: {
         book: {author:'red', title:"blue"},
-        bookslength: 2,
-        
+        bookslength: 2,   
       }
-      
     })
-
-    jest.useFakeTimers()
   })
 
-  afterEach(() => {
-    jest.useRealTimers()
-  })
- 
 
   it('component mounts without errors', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
@@ -63,8 +53,6 @@ describe('BookItem', () => {
 
     wrapper.vm.goTodetail = jest.fn();
     wrapper.find("h2").trigger('click');
-    expect(wrapper.vm.goTodetail).toBeCalled();
- 
-              
+    expect(wrapper.vm.goTodetail).toBeCalled();        
   })
 })
