@@ -110,7 +110,6 @@ Asynchronous programming allows programs to do more than one thing at a time and
    ## References:
 
    [MDN - innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
-   [MDN-createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+   [MDN - createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
    [stackoverflow - innerhtml](https://stackoverflo*w.com/questions/11515383/why-is-element-innerhtml-bad-code)
-
-    [MDN-asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
+   [MDN - asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
