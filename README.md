@@ -22,13 +22,13 @@ The data are fetched from iTunes API with search and filtering functionalities a
 
 The main task the user can perform are:
 
-1. User can search for the top 100 songs.
+1. search for the top 100 songs.
 
-2. User can select one album and get more info
+2. select one album and get more info
 
-3. User can select album as a favourite
+3. select album as a favourite
 
-4. User can remove album from his favourite
+4. remove album from his favourite
 
   
 
@@ -42,8 +42,7 @@ I am passionate about human-computer interaction, its constant development and h
 
 ## 2.2. Which are your favorite features of HTML5? How have you used them before? 
 
-I like to use the HTML5's web storage feature to simulate and mimic the backend. The local storage makes it possible to store values in the browser. I used the localStorage in three of my projects where the user can select an item and then it get saved it in their favorite.
-
+I like to use the HTML5's web storage feature to simulate and mimic the backend. The local storage makes it possible to store values in the browser. I used the localStorage in three of my projects where the user can select an item and add  it in their favorite “basket”.
   
 
 ## 2.3. Explain the difference between creating a DOM element setting innerHTML and using createElement.
@@ -61,12 +60,9 @@ The `innerHTML` property can also change the value of selected DOM node  and can
 
 **![](https://lh4.googleusercontent.com/y55tA-B-4iyO7uk-jkPVHA4SHCkY5xm4Q_sMk-f045hJwMwjgT3ZXNnPcPXkDqhX5wQWvJ4tnkvRBl7ICLhHDt24fgE4TI9dx1xr9MQcbHYORr5oYHM6hS_6_k-6vod4imsEfJ3G)**
   
-  
-
-It is indeed most faster and easier to read when using the `innerHTML` property, although this has some pitfalls:
+However, there are various disadvantages when using innerHTML as the entire innerHTML content is reparsed and build into elements.
 
 1) The `innerHTML` property destroys the contents of a container and replace it with something new as the example above demonstrates. The content is replaced everywhere, so when we append to or modify the `innerHTML`, all the DOM inside that element are re-parsed and recreated. In order to keep the previous content we need to remember to use += operators.
- However, It is recommended to use [insertAdjacentHTML()](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method when we want to insert the HTML into the document rather than replace the contents of an element because it prevents bug and allows to keep track of modifications.
 
   
 
@@ -74,9 +70,6 @@ It is indeed most faster and easier to read when using the `innerHTML` property,
 
 To conclude, I will say that `createElement` methods  is a better approach when we want to create a brand new element in the DOM because it has less risks of bugs and we can then manipulate the DOM in a consistent way as it gives more flexibility in terms of what you can add to or do with an element initially without having to reselect the element.
 
-
-
-  
 
 ## 2.4. Compare two-way data binding vs one-way data flow.
 
@@ -107,15 +100,17 @@ Angular and Vue.js are popular framework which uses two-way.
 
 ## 2.5. Why is asynchronous programming important in JavaScript?
  
- In JavaScript, we often need to deal with asynchronous behavior to ensure responsiveness of the application. However to understand asynchronous programming first we need to understand how synchronous programming works.
+  In JavaScript, we often need to deal with asynchronous behavior to ensure responsiveness of the application. However to understand asynchronous programming first we need to understand how synchronous programming works. Because JavaScript code runs on a single-thread and has a synchronous execution model. 
 
-JavaScript code runs on a single-thread and has a synchronous execution model. Single thread means that one command is being executed at a time and synchronous programming means that the code is executed sequentially from top-to-bottom, in the exact same order and it waits for one action to complete before moving on to the next. Therefore, if one function takes time like fetching data from an API, then all the code is blocked and nothing get displayed on the page. Among other things, this kind of blocking leads to really bad user experience.
+ Single thread means that one command is being executed at a time and synchronous programming means that the code is executed sequentially from top-to-bottom, in the exact same order and it waits for one action to complete before moving on to the next. Therefore, if one function takes time like fetching data from an API, then all the code is blocked the user interface just freezes during the code execution and nothing get displayed on the page. Among other things, this kind of blocking leads to really bad user experience.
 
   
 Asynchronous programming allows programs to do more than one thing at a time and therefore can be used to mitigate this issue. Asynchronous code can start something now and then finish it later. Let’s say I am also using an API to fetch data but then instead of blocking the code and waiting for the response. Asynchronous programming allows the code to carry on, and perform other task, like displaying a loader indicating to the user that something is in progress until that API respond and then do something with the data to display on the page.
 
    ## References:
-    innerHTML vs createElement()
-   [https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
-    [https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-    [https://stackoverflow.com/questions/11515383/why-is-element-innerhtml-bad-code](https://stackoverflo*w.com/questions/11515383/why-is-element-innerhtml-bad-code)
+
+   [MDN - innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+   [MDN-createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+   [stackoverflow - innerhtml](https://stackoverflo*w.com/questions/11515383/why-is-element-innerhtml-bad-code)
+
+    [MDN-asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
