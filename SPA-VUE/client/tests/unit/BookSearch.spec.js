@@ -2,52 +2,46 @@ import Vuex from 'vuex'
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import BookSearch from '@/components/BookSearch'
  
+
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe('BookSearch', () => {
-    let wrapper
-    let store
-    let actions
-    let getters
+  let wrapper
+  let store
+  let actions
+  let getters
+ 
+ 
+  beforeEach(() => {
    
-    beforeEach(() => {
-      getters ={
+    getters={
         getquery: (state) => state.query,
-        getSearchedBooks: (state) => state.searchedBooks
-      }
+        getSearchedBooks: (state) => state.searchedBooks,
+    }
       actions={ 
-        searchBooks: jest.fn()
-      }
-  
-      store = new Vuex.Store({
-        modules: {
-          books: {
-            actions,
-            getters
-          }
+        searchBooks:jest.fn()
+    }
+
+    store = new Vuex.Store({
+      modules: {
+        books: {
+            getters,
+          actions
         }
-      })
-      
-      wrapper = shallowMount(BookSearch, {
-        localVue,
-        store
-      })
+      }
     })
-   
-    it('component mounts without errors', () => {
-      expect(wrapper.isVueInstance()).toBeTruthy()
+    wrapper = shallowMount(BookSearch, {
+      localVue,
+      store,
     })
+  })
 
-    it("renders input tag", ()=>{
-        expect(wrapper.contains("input")).toBe(true)
-    })
-
-    it("dispatches searchWord", ()=>{
-        const input = wrapper.find("input")
-        input.trigger("input")
-        expect(actions.searchBooks).toHaveBeenCalled()
-        
-    })
-
+  it('component mounts without errors', () => {
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
+  it("input tag display", ()=>{
+    expect(wrapper.contains("input")).toBe(true)
+  })
+ 
 })
